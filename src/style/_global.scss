@@ -20,6 +20,8 @@ body {
 * {
   user-select: none;
   white-space: pre-wrap;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ul,

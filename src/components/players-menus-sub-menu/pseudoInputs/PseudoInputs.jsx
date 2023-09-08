@@ -29,7 +29,7 @@ const PseudoInputs = ({
           onKeyDown={enterValidation}
         />
         <label>
-          {"Ton  pseudo".split("").map((el, i) => (
+          {"Ton pseudo".split("").map((el, i) => (
             <span key={i} style={{ transitionDelay: `${i * 30}ms` }}>
               {el}
             </span>

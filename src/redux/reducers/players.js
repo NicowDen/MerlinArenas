@@ -84,7 +84,7 @@ const playersReducer = (state = INITIAL_STATE, action) => {
           playerClass: {
             ...state[action.payload.player].playerClass,
             onDef: true,
-            agi: state[action.payload.player].playerClass.agi + 3,
+            agi: state[action.payload.player].playerClass.agi + 4,
           },
         },
       };
@@ -97,7 +97,7 @@ const playersReducer = (state = INITIAL_STATE, action) => {
           playerClass: {
             ...state[action.payload.player].playerClass,
             onDef: false,
-            agi: state[action.payload.player].playerClass.agi - 3,
+            agi: state[action.payload.player].playerClass.agi - 4,
           },
         },
       };

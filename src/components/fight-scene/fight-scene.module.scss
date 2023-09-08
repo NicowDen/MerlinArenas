@@ -162,9 +162,22 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-size: 20px;
             @media (max-width: 600px) {
               font-size: 14px;
               padding: 0;
+            }
+            @media (min-width: 1000px) {
+              font-size: 24px;
+            }
+            @media (min-width: 1150px) {
+              font-size: 22px;
+            }
+            @media (min-width: 1250px) {
+              font-size: 24px;
+            }
+            @media (min-width: 1350px) {
+              font-size: 28px;
             }
           }
           p:hover {
