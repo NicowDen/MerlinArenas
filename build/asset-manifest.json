@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.22a6cd23.css",
+    "main.js": "/static/js/main.32b80c47.js",
+    "static/media/icomoon.svg?k91i70": "/static/media/icomoon.531f962b30a9294db8af.svg",
+    "static/media/arena2.jpeg": "/static/media/arena2.4ee79b1b3d5964a7f50a.jpeg",
+    "static/media/arena7.jpeg": "/static/media/arena7.0d12f3b37836a58ad67f.jpeg",
+    "static/media/icomoon.eot?k91i70": "/static/media/icomoon.be6e6cb09c73bd8115ff.eot",
+    "static/media/icomoon.woff?k91i70": "/static/media/icomoon.d91f2a0922973dc3fbda.woff",
+    "static/media/icomoon.ttf?k91i70": "/static/media/icomoon.f5857b1d3d00eb472f8f.ttf",
+    "static/media/warriorImgP2.png": "/static/media/warriorImgP2.dfb4d7cb9df5c37993a9.png",
+    "static/media/warriorImgP1.png": "/static/media/warriorImgP1.0dc375c985e30bca3e5a.png",
+    "static/media/mageImgP2.png": "/static/media/mageImgP2.280b8320a67afc284bf3.png",
+    "static/media/mageImgP1.png": "/static/media/mageImgP1.35e52b74f4fc0e9f455e.png",
+    "static/media/arena4.jpeg": "/static/media/arena4.aca0928c433f39f13812.jpeg",
+    "static/media/Mdj.png": "/static/media/Mdj.43bfce454202b1facdc2.png",
+    "static/media/arena1.jpeg": "/static/media/arena1.cef3c9b4d251d10eac2a.jpeg",
+    "static/media/arena3.jpeg": "/static/media/arena3.bb4883bb7b1d79f6bad0.jpeg",
+    "static/media/rogueImgP1.png": "/static/media/rogueImgP1.142e7207456b9e6bf925.png",
+    "static/media/rogueImgP2.png": "/static/media/rogueImgP2.1ee4ccaef9e072da3e00.png",
+    "static/media/arena6.avif": "/static/media/arena6.2dcf6d5274d4fc54d315.avif",
+    "index.html": "/index.html",
+    "main.22a6cd23.css.map": "/static/css/main.22a6cd23.css.map",
+    "main.32b80c47.js.map": "/static/js/main.32b80c47.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22a6cd23.css",
+    "static/js/main.32b80c47.js"
+  ]
+}
