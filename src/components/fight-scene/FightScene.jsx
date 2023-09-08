@@ -11,10 +11,6 @@ import Winner from "../fight-scene-elements/winner/Winner";
 //backgrouns images//
 import arena1 from "../../images/arena1.jpeg";
 import arena2 from "../../images/arena2.jpeg";
-import arena3 from "../../images/arena3.jpeg";
-import arena4 from "../../images/arena4.jpeg";
-import arena5 from "../../images/arena4.jpeg";
-import arena6 from "../../images/arena6.jpeg";
 //utils//
 import { getRandom } from "../../utils/getRandom";
 //MDJ dialogs//
@@ -75,7 +71,7 @@ const FightScene = () => {
     };
   });
 
-  const arenaImages = [arena1, arena2, arena3, arena4, arena5, arena6];
+  const arenaImages = [arena1, arena2];
   //mdj dialogs state rdm//
   const [random, setRandom] = useState(null);
 
@@ -164,7 +160,7 @@ const FightScene = () => {
       });
       dispatch({ type: "CAN_PLAY" });
       newDice();
-    }, 2500);
+    }, 2000);
   };
 
   //round is even or odd, so modulo2 to determine who can play. If round is odd player 1, else player 2
@@ -400,7 +396,7 @@ const FightScene = () => {
 
   //POTION SKILL//
   const potionHeal = (attacker, attackerTostring) => {
-    if (attacker.playerClass.hp >= 300) {
+    if (attacker.playerClass.hp >= 150) {
       dispatch({ type: "PLAYER_ACTION_STATUS_POTION_NOK" });
       setRandom(getRandom(0, mdjPotionNok.length - 1)); //mdjPotionNok array length = 3
     } else if (attacker.playerClass.potions <= 0) {
@@ -560,6 +556,7 @@ const FightScene = () => {
               round={round}
               attacker={attacker}
               playerActionStatus={playerActionStatus}
+              canPlay={canPlay}
             />
           </div>
         </div>

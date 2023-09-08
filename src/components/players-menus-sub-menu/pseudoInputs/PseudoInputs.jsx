@@ -4,10 +4,16 @@ const PseudoInputs = ({
   inputValue,
   player,
   enterValidation,
+  pseudoValidation,
   pseudoInTitle,
   inputValidationError,
   updatePseudo,
 }) => {
+  // Fonction de mise à jour de la valeur locale de l'input
+  const handleInputChange = (e) => {
+    // Appel de l'ancienne fonction updatePseudo si nécessaire
+  };
+
   return (
     <div className={mc.container}>
       <div className={mc.h3}>
@@ -27,6 +33,7 @@ const PseudoInputs = ({
           value={inputValue}
           onChange={(e) => updatePseudo(player, e.target.value)}
           onKeyDown={enterValidation}
+          // onBlur={pseudoValidation}
         />
         <label>
           {"Ton pseudo".split("").map((el, i) => (
@@ -36,6 +43,15 @@ const PseudoInputs = ({
           ))}
         </label>
       </div>
+
+      <button
+        className={
+          inputValue.trim().length > 0 ? mc.button_shown : mc.button_hidden
+        }
+        onClick={() => pseudoValidation(inputValue)}
+      >
+        OK
+      </button>
     </div>
   );
 };

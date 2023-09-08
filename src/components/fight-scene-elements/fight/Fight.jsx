@@ -17,6 +17,7 @@ const Fight = ({
   onUltimClickP2,
   onPotionClickP2,
   round,
+  canPlay,
   attacker,
   playerActionStatus,
 }) => {
@@ -31,7 +32,8 @@ const Fight = ({
           onDefenseClick={onDefenseClickP1}
           onUltimClick={onUltimClickP1}
           onPotionClick={onPotionClickP1}
-          round={round > 0 && round % 2 === 1}
+          round={round > 0 && round % 2 === 1 && canPlay === true}
+          roundZero={round <= 0}
           playerTakeDmg={
             (round > 0 &&
               round % 2 === 0 &&
@@ -76,7 +78,8 @@ const Fight = ({
           onDefenseClick={onDefenseClickP2}
           onUltimClick={onUltimClickP2}
           onPotionClick={onPotionClickP2}
-          round={round > 0 && round % 2 === 0}
+          round={round > 0 && round % 2 === 0 && canPlay === true}
+          roundZero={round <= 0}
           playerTakeDmg={
             (round > 0 &&
               round % 2 === 1 &&

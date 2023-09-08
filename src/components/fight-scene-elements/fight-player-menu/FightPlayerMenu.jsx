@@ -30,6 +30,7 @@ const FightPlayerMenu = ({
   onUltimClick,
   onPotionClick,
   round,
+  roundZero,
   playerTakeDmg,
   playerDodge,
   playerTakePotion,
@@ -67,7 +68,15 @@ const FightPlayerMenu = ({
   ]);
 
   return (
-    <div className={mc.container}>
+    <div
+      className={
+        roundZero
+          ? mc.container
+          : round
+          ? `${mc.container} ${mc.container_green}`
+          : `${mc.container} ${mc.container_red}`
+      }
+    >
       <div className={mc.player_menu}>
         <div>
           <button

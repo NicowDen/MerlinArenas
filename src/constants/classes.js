@@ -1,7 +1,8 @@
 export const classes = [
   {
     className: "mage",
-    hp: 300,
+    hp: 150,
+    // atk: 2000,
     atk: 16,
     int: 150,
     spd: 50,
@@ -16,7 +17,7 @@ export const classes = [
   },
   {
     className: "voleur",
-    hp: 300,
+    hp: 150,
     atk: 44,
     int: 20,
     spd: 80,
@@ -30,7 +31,7 @@ export const classes = [
   },
   {
     className: "guerrier",
-    hp: 300,
+    hp: 150,
     atk: 130,
     int: 10,
     spd: 30,

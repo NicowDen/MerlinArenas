@@ -149,7 +149,7 @@ const playersReducer = (state = INITIAL_STATE, action) => {
       const playerData = state[player];
       const minHealPercentage = 10;
       const maxHealPercentage = 20;
-      const baseHP = 300; // MAXHP
+      const baseHP = 150; // MAXHP
       if (
         playerData &&
         playerData.playerClass &&

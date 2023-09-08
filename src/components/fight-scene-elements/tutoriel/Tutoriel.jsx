@@ -328,7 +328,7 @@ const Tutoriel = ({ player1, player2, closeTutoriel, animation }) => {
         <button onClick={stopTextDisplayAnimation}>Passer</button>
       </div>
 
-      <div className={mc.confirmation}>
+      <div onClick={closeTutoriel} className={mc.confirmation}>
         <button onClick={closeTutoriel}>OK</button>
       </div>
     </div>

@@ -48,13 +48,13 @@ const LifeBar = ({ windowWidth, playerNumber, player }) => {
           </div>
           <div
             className={
-              player.playerClass.hp <= 50
+              player.playerClass.hp <= 25
                 ? `${mc.life_remaining} ${mc.life_remaing_red}`
-                : player.playerClass.hp <= 150
+                : player.playerClass.hp <= 75
                 ? `${mc.life_remaining} ${mc.life_remaing_orange}`
                 : `${mc.life_remaining} ${mc.life_remaing_green}`
             }
-            style={{ "--remaining-life": `${player.playerClass.hp / 3}%` }}
+            style={{ "--remaining-life": `${player.playerClass.hp / 1.5}%` }}
           ></div>
         </div>
       </div>

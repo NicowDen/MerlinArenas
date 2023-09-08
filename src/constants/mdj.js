@@ -28,7 +28,7 @@ export const mdjPotionOk = [
 export const mdjPotionNok = [
   "Tu essayes de soigner quoi là? Ta bêtise? C'est pas le bon remède.",
   "Je comprends maintenant pourquoi ${attacker} est un si mauvais combattant... Il est aveugle. TES POINTS DE VIE SONT COMPLETS !!!",
-  "300PV/300PV... hey ${attacker} faut arrêter d'enfoncer le coton tige quand tu sents que ça résiste !",
+  "150PV/150PV... hey ${attacker} faut arrêter d'enfoncer le coton tige quand tu sents que ça résiste !",
 ];
 
 export const mdjNoMorePotion = [

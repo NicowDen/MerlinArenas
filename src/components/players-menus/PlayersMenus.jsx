@@ -56,7 +56,7 @@ const PlayersMenu = () => {
   };
 
   //confirm player pseudo validation or launch error on input if try to validate an empty pseudo
-  const pseudoValidate = (e, playerNumber) => {
+  const pseudoValidationEnter = (e, playerNumber) => {
     if (e.key === "Enter") {
       if (e.target.value.trim() !== "") {
         dispatch({ type: `ANIMATION_P${playerNumber}_PSEUDO_VALIDATION` });
@@ -72,6 +72,22 @@ const PlayersMenu = () => {
           dispatch({ type: `PLAYER${playerNumber}_PSEUDO_INPUT_ERROR_RESET` });
         }, 1000);
       }
+    }
+  };
+  const pseudoValidation = (value, playerNumber) => {
+    if (value.trim() !== "") {
+      dispatch({ type: `ANIMATION_P${playerNumber}_PSEUDO_VALIDATION` });
+      dispatch({ type: `PLAYER${playerNumber}_PSEUDO_INPUT_ERROR_RESET` });
+      setTimeout(() => {
+        //setTimeout to match with transition on css and let animation finish before components switch
+        dispatch({ type: `PLAYER${playerNumber}_PSEUDO_VALIDATE` });
+      }, 200);
+    } else {
+      dispatch({ type: `PLAYER${playerNumber}_PSEUDO_INPUT_ERROR` });
+      setTimeout(() => {
+        //setTimeout to match with transition on css and let animation finish before components switch
+        dispatch({ type: `PLAYER${playerNumber}_PSEUDO_INPUT_ERROR_RESET` });
+      }, 1000);
     }
   };
 
@@ -172,9 +188,10 @@ const PlayersMenu = () => {
                 inputValue={player1.pseudo}
                 player="player1"
                 pseudoInTitle="Joueur 1"
-                enterValidation={(e) => pseudoValidate(e, 1)}
+                enterValidation={(e) => pseudoValidationEnter(e, 1)}
                 inputValidationError={inputP1ValidationError}
                 updatePseudo={updatePseudo}
+                pseudoValidation={(value) => pseudoValidation(value, 1)}
               />
             </div>
           ) : (
@@ -225,9 +242,10 @@ const PlayersMenu = () => {
                 inputValue={player2.pseudo}
                 player="player2"
                 pseudoInTitle="Joueur 2"
-                enterValidation={(e) => pseudoValidate(e, 2)}
+                enterValidation={(e) => pseudoValidationEnter(e, 2)}
                 inputValidationError={inputP2ValidationError}
                 updatePseudo={updatePseudo}
+                pseudoValidation={(value) => pseudoValidation(value, 2)}
               />
             </div>
           ) : (

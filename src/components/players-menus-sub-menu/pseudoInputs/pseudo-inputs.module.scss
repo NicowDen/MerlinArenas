@@ -34,6 +34,7 @@
     align-items: center;
     flex: 1 0;
     .input {
+      position: relative;
       max-width: 40%;
       background-color: transparent;
       border: 0;
@@ -97,8 +98,41 @@
     }
     input:focus + label span,
     input:valid + label span {
-      transform: translateY(30px);
+      transform: translateY(-35px);
       color: var(--color2);
+      font-size: 16px;
     }
+  }
+  button {
+    all: unset;
+    position: absolute;
+    border: 1px solid var(--color1);
+    padding: 8px;
+    border-radius: 8px;
+    bottom: -15px;
+    transition: opacity 0.3s;
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @media (max-width: 400px) {
+      min-width: 30px;
+      padding: 4px;
+      bottom: -5px;
+    }
+  }
+  button:hover {
+    box-shadow: 0px 0px 3px 2px var(--color1);
+  }
+  button:active {
+    scale: 0.9;
+  }
+  .button_hidden {
+    opacity: 0;
+  }
+
+  .button_shown {
+    opacity: 1;
   }
 }
