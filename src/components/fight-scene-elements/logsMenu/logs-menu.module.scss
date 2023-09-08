@@ -1,0 +1,86 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveDown {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+  max-height: 1px;
+  div {
+    flex: 1 0;
+  }
+}
+
+.logs_list {
+  // min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 16px;
+  padding: 16px 0;
+  position: relative;
+  @media (max-width: 600px) {
+    padding: 0 0;
+  }
+  .log {
+    background-color: rgb(40, 99, 166);
+    max-width: 80%;
+    min-width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    border: 3px solid white;
+    border-radius: 32px;
+    animation: fadeIn 1s;
+    text-align: center;
+    transition: all 0.3s;
+    span {
+      letter-spacing: 1px;
+      @media (max-width: 600px) {
+        letter-spacing: 0px;
+      }
+    }
+  }
+
+  .log:last-child {
+    border-color: white;
+    background-color: gold;
+    span {
+      // background-color: rgb(40, 99, 166);
+      font-size: 20px;
+      font-weight: 600;
+      color: black;
+      @media (max-width: 600px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .log:not(:last-child) {
+    // animation: fadeInAndMoveDown 0.5s forwards;
+    // transition: all 0.5s;
+    span {
+      font-size: 16px;
+      @media (max-width: 600px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

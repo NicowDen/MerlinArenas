@@ -1,0 +1,350 @@
+@keyframes playerTakeHit {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes playerTakePotion {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes player1Dodge {
+  from {
+    transform: translateX(-20px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes player2Dodge {
+  from {
+    transform: translateX(20px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes aura {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes windEffectP1 {
+  0% {
+    left: 90%;
+    opacity: 0;
+  }
+  100% {
+    left: -100%;
+    opacity: 1;
+  }
+}
+
+@keyframes windEffectP2 {
+  0% {
+    left: -45%;
+    opacity: 0;
+  }
+  70% {
+    left: 110%;
+    opacity: 0.5;
+  }
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes sleepAnimation {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+// opacity 0 sur les images entre les tours
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border: 1px solid var(--color1);
+  border-radius: 16px;
+  transition: border 0.2s;
+  overflow: hidden;
+  // background-color: var(--color3);
+  background-color: var(--color3-medium-opacity);
+  .player_menu {
+    flex: 0.5 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    @media (max-width: 600px) {
+      align-items: center;
+      flex: 1 0;
+    }
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      min-width: 100%;
+      align-items: center;
+      justify-content: space-evenly;
+      @media (max-width: 800px) {
+        gap: 5px;
+      }
+      @media (min-width: 1200px) {
+        justify-content: center;
+        gap: 16px;
+      }
+      .attack,
+      .defense,
+      .ultim,
+      .potion {
+        all: unset;
+        cursor: pointer;
+        min-height: 25%;
+        padding: 8px;
+        display: flex;
+        transition: opacity 0.2s;
+        z-index: 1;
+        .tooltip_content {
+          position: absolute;
+          top: 120%; /* Ancrez le haut du tooltip */
+          left: 50%;
+          transform: translate(-50%, -30%);
+          background-color: var(--color3);
+          border: 2px solid var(--color4);
+          color: var(--color1);
+          padding: 8px;
+          display: none;
+          z-index: 1;
+          min-width: 90%;
+          min-width: auto;
+          text-align: center;
+          justify-content: center;
+          font-family: var(--font2);
+          font-size: 18px;
+          border-radius: 8px;
+          @media (min-width: 1200px) {
+            min-width: auto;
+            font-size: 20px;
+          }
+        }
+        img {
+          border-radius: 100%;
+          box-shadow: 0px 0px 1px 2px var(--color4);
+          width: 60px;
+          transition: width 0.5s;
+
+          @media (max-width: 600px) {
+            width: 60px;
+          }
+          @media (min-width: 800px) {
+            width: 65px;
+          }
+          @media (min-width: 900px) {
+            width: 70px;
+          }
+          @media (min-width: 1200px) {
+            width: 90px;
+          }
+        }
+        img:hover {
+          box-shadow: 0px 0px 8px 6px var(--color4);
+        }
+      }
+      button:hover .tooltip_content {
+        display: flex;
+        opacity: 1 !important;
+      }
+    }
+    .defense_low_opacity {
+      opacity: 0.3 !important;
+    }
+    .ultim_low_opacity {
+      position: relative !important;
+    }
+    .ultim_low_opacity:after {
+      content: "";
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      min-width: 100%;
+      min-height: 100px;
+      background-color: var(--color3);
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      opacity: 0.9;
+    }
+    .potion {
+      position: relative;
+      .potions_counter {
+        position: absolute;
+        transform: translate(-30%, -50%);
+        font-size: 24px;
+        color: rgb(23, 255, 23);
+        z-index: 1;
+        background-color: var(--color3);
+        min-width: 25px;
+        min-height: 25px;
+        border: 2px solid var(--color4);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 780px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .player_character {
+    flex: 2 0;
+    position: relative;
+    overflow: visible;
+    @media (max-width: 600px) {
+      // flex: 6 0;
+    }
+    .sleeping {
+      position: absolute;
+      font-size: 24px;
+      color: rgb(22, 207, 16);
+      animation: sleepAnimation 2s ease-in-out infinite;
+      top: -10%;
+      left: 40%;
+    }
+  }
+
+  .player_character_take_it {
+    animation: playerTakeHit 0.5s;
+  }
+  .player_character_take_potion {
+    animation: playerTakePotion 0.5s;
+  }
+  .player_character_take_potion::before,
+  .player_character_take_it::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    animation: aura 0.7s ease-in-out infinite alternate;
+  }
+  .player_character_take_it::before {
+    background: radial-gradient(
+      circle,
+      transparent 20%,
+      rgba(255, 0, 0, 0.5) 40%,
+      transparent 70%
+    );
+  }
+  .player_character_take_potion::before {
+    background: radial-gradient(
+      circle,
+      transparent 20%,
+      rgba(8, 227, 45, 0.5) 40%,
+      transparent 70%
+    );
+  }
+
+  .player_character_take_it::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(
+      circle,
+      transparent 20%,
+      rgba(255, 0, 0, 0.5) 40%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    animation: aura 0.7s ease-in-out infinite alternate;
+  }
+  .player1_character_dodge {
+    animation: player1Dodge 0.5s;
+  }
+  .player2_character_dodge {
+    animation: player2Dodge 0.5s;
+  }
+  .player1_character_dodge::before,
+  .player2_character_dodge:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .player1_character_dodge::before {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(106, 141, 177, 0.5) 10%,
+      transparent 100%
+    );
+    animation: windEffectP1 0.9s linear forwards;
+    transform: translateX(-50%);
+  }
+  .player2_character_dodge::before {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(106, 141, 177, 0.2) 10%,
+      transparent 100%
+    );
+    animation: windEffectP2 0.9s linear forwards;
+    transform: translateX(0);
+  }
+}
+
+.low_opacity {
+  opacity: 0.2;
+}

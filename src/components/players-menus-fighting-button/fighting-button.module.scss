@@ -1,0 +1,28 @@
+.container {
+  button {
+    all: unset;
+    z-index: 2;
+    border-radius: 16px;
+    background-color: var(--color2);
+    min-height: 60px;
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 22px;
+    transition: box-shadow 0.2s;
+    box-shadow: var(--shadow3d-2);
+    color: var(--color1);
+    @media (max-width: 700px) {
+      min-height: 40px;
+      min-width: 100px;
+    }
+  }
+  button:hover {
+    box-shadow: var(--shadow3d-3);
+  }
+  button:active {
+    scale: 0.98;
+  }
+}

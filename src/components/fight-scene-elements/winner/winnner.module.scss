@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  min-width: 100%;
+  flex: 1 0;
+  justify-content: center;
+  align-items: center;
+  div {
+    padding: 32px;
+    background-color: var(--color3-low-opacity);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 200px;
+    h3 {
+      display: flex;
+      gap: 5px;
+    }
+    button {
+      all: unset;
+      min-width: 50%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid var(--color1);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    button:hover {
+      color: var(--color3);
+      background-color: var(--color1);
+      border: 1px solid var(--color3);
+    }
+    button:active {
+      scale: 0.98;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@keyframes shine {
+  from {
+    background-position: 200%;
+  }
+  to {
+    background-position: 0%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  position: relative;
+  h1 {
+    margin: 0;
+    text-align: center;
+    background: var(--linear-blood-h1);
+    animation: shine 5s linear infinite;
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    font-size: 40px;
+    @media (max-width: 700px) {
+      font-size: 30px;
+    }
+  }
+  .settings {
+    position: absolute;
+    // min-width: 50px;
+    // min-height: 50px;
+    right: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    // background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

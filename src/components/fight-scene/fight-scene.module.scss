@@ -1,0 +1,240 @@
+@keyframes back {
+  from {
+    background-size: 100% 100%;
+  }
+  to {
+    background-size: 200% 200%;
+  }
+}
+
+@keyframes shine {
+  from {
+    background-position: 200%;
+  }
+  to {
+    background-position: 0%;
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  12.5% {
+    background-position: 100% 12.5%;
+  }
+  25% {
+    background-position: 0% 25%;
+  }
+  37.5% {
+    background-position: 100% 37.5%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  62.5% {
+    background-position: 100% 62.5%;
+  }
+  75% {
+    background-position: 0% 75%;
+  }
+  87.5% {
+    background-position: 100% 87.5%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes moveBackgroundRightLeft {
+  0% {
+    background-position: 50% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 0% 0%;
+  }
+  75% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+.tutoriel,
+.winner {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  flex-direction: column;
+}
+
+.tutoriel {
+  padding: 32px;
+}
+
+.winner {
+  transition: opacity 0.5s;
+  animation: moveBackgroundRightLeft 110s linear infinite;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.winner_shown {
+  opacity: 1;
+  scale: 1;
+}
+.winner_hidden {
+  opacity: 0;
+  scale: 0;
+}
+
+.container {
+  border-radius: 16px;
+  flex: 1 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .fightingZone {
+    min-width: 100%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    @media (max-width: 600px) {
+      padding: 8px;
+    }
+    .top_menu {
+      flex: 1 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      .life_bars_player1,
+      .life_bars_player2 {
+        min-height: 100%;
+        flex: 1 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .top_tv {
+        position: relative;
+        min-height: 100%;
+        flex: 1 0;
+        border: 3px solid var(--color4);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        transition: opacity 0.3s;
+        overflow: hidden;
+        animation: moveBackground 100s linear infinite;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        button {
+          all: unset;
+          background-color: var(--color3-low-opacity);
+          border-radius: 8px;
+          min-width: 100%;
+
+          p {
+            color: var(--color1);
+            letter-spacing: 1px;
+            padding: 8px;
+            text-align: center;
+            transition: opacity 0.2s;
+            background: var(--linear-2);
+            animation: shine 5s linear infinite;
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @media (max-width: 600px) {
+              font-size: 14px;
+              padding: 0;
+            }
+          }
+          p:hover {
+            content: "are you sure ?";
+          }
+        }
+      }
+    }
+    .mdj_menu {
+      flex: 3 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .fighting_menu {
+      flex: 4 0;
+      // overflow-y: auto;
+    }
+  }
+}
+
+.container_low_opacity {
+  opacity: 0.1;
+}
+
+//div for clean top_TV screen//
+.clean_tv {
+  flex: 1 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    140deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(52, 52, 52, 1) 100%
+  );
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease-in-out, height 0.5s ease-in-out;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+}
+
+.clean_tv_on {
+  width: 100%;
+  height: 100%;
+}
+//div for clean top_TV screen//
+
+.myTV {
+  flex: 1 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    140deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(52, 52, 52, 1) 100%
+  );
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    140deg,
+    rgba(14, 14, 14, 1) 0%,
+    rgba(52, 52, 52, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,80 @@
+.container {
+  flex: 1 0;
+  display: flex;
+  padding: 16px;
+  height: 350px;
+  border-radius: 30px;
+  background: var(--background);
+  box-shadow: var(--shadow3d);
+  overflow: hidden;
+  @media (max-width: 700px) {
+    height: 600px;
+  }
+  .players_menu {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    @media (max-width: 700px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .player1,
+    .player2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex: 1 0;
+      padding: 32px 0;
+    }
+    .player1 {
+      border-right: 1px solid var(--color2);
+      @media (max-width: 700px) {
+        border-right: none;
+        border-bottom: 1px ridge var(--color1);
+      }
+    }
+    .player2 {
+    }
+    .fighting_button {
+      background: var(--background);
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: opacity 0.5s;
+      @media (max-width: 700px) {
+        transform: translate(-50%, -65%);
+        left: 50%;
+      }
+    }
+  }
+}
+
+.player1_pseudo,
+.player2_pseudo {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0;
+  min-width: 100%;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.player1_class_selection,
+.player2_class_selection {
+  min-width: 100%;
+  flex: 1 0;
+  display: flex;
+}
+
+.animate_opacity {
+  opacity: 0;
+}
+
+.animate_fade_in {
+  opacity: 1;
+}

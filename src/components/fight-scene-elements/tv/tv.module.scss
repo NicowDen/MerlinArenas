@@ -1,0 +1,51 @@
+@keyframes beforeRounds {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes rounds {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.container {
+  cursor: auto;
+  overflow: hidden;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .dice_loading {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: beforeRounds 2s;
+  }
+  .rounds {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: rounds 1s;
+    font-size: 24px;
+    text-align: center;
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.players {
+  --classColor: "";
+  color: var(--classColor);
+}

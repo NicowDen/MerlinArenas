@@ -1,0 +1,38 @@
+:root {
+  //dark defautlt//
+  --background: var(--color3);
+  --linear-blood-h1: linear-gradient(
+    to right,
+    var(--color3) 20%,
+    var(--color2) 40%,
+    var(--color2) 10%,
+    var(--color3) 80%
+  );
+  --linear-blood-h1-light: linear-gradient(
+    to right,
+    var(--color2) 0%,
+    var(--color1) 40%,
+    var(--color1) 10%,
+    var(--color2) 100%
+  );
+  --linear-2: linear-gradient(
+    to right,
+    var(--color1) 0%,
+    var(--color4) 40%,
+    var(--color4) 10%,
+    var(--color1) 100%
+  );
+  --shadow3d: 7px 7px 30px rgb(10, 10, 10), -15px -15px 30px rgb(20, 20, 20);
+  --shadow3d-3: 0px 0px 10px 4px var(--color1);
+  --shadow3d-2: 0px 0px 4px 2px var(--color1);
+  --text-color-dark: white;
+  --color1: white;
+  --color2: rgb(212, 21, 21);
+  --color3: rgb(23, 23, 23);
+  --color3-low-opacity: rgba(23, 23, 23, 0.7);
+  --color3-medium-opacity: rgba(23, 23, 23, 0.96);
+  --color4: silver;
+  --nav-bar-height: 60px;
+  --font1: "Rubik Pixels", cursive;
+  --font2: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

@@ -1,0 +1,203 @@
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes underline {
+  0%,
+  100% {
+    content: "_";
+  }
+  50% {
+    content: "";
+  }
+}
+
+.container {
+  --opacity: 0;
+  min-width: 100%;
+  display: flex;
+  border-radius: 16px;
+  border: 3px dashed var(--color1);
+  transition: scale 0.3s;
+  flex-direction: column;
+  background-color: var(--color3-low-opacity);
+  flex: 1 0;
+  padding: 16px;
+  position: relative;
+  justify-content: space-between;
+  overflow-y: auto;
+  max-height: 95vh;
+  @media (max-width: 700px) {
+    gap: 16px;
+  }
+  div {
+    width: fit-content;
+    min-width: 100%;
+    transition: all 0.5s;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    gap: 4px;
+    @media (max-width: 700px) {
+      gap: 2px;
+    }
+    h3,
+    p {
+      display: flex;
+      span {
+        opacity: var(--opacity);
+        transition: opacity 0.1s ease-in-out;
+        animation: textFadeIn 0.1s forwards;
+        letter-spacing: 1px;
+        font-weight: lighter;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 24px;
+        @media (max-width: 700px) {
+          font-size: 20px;
+        }
+        @media (min-width: 1200px) {
+          font-size: 30px;
+        }
+      }
+    }
+    p {
+      display: flex;
+      span {
+        font-size: 22px;
+        @media (max-width: 700px) {
+          font-size: 18px;
+        }
+        @media (min-width: 1200px) {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  .title {
+    justify-content: center;
+    padding: 16px;
+    @media (max-width: 700px) {
+      justify-content: start;
+      padding: 0;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+  .tutoriel_content {
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+    .tutoriel_dices,
+    .tutoriel_actions {
+      display: flex;
+      flex-direction: column;
+      .tutoriel_dices_title,
+      .tutoriel_actions_title {
+        h3 {
+          span {
+            font-weight: bolder;
+            font-size: 24px;
+            @media (max-width: 700px) {
+              font-size: 18px;
+            }
+            @media (min-width: 1200px) {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.underline {
+  display: inline-block;
+  animation: underline 1s infinite; /* Appliquez l'animation */
+}
+
+.container_hide {
+  scale: 0;
+}
+.container_show {
+  scale: 1;
+}
+
+.des {
+  color: rgb(34, 251, 38);
+}
+
+.faibles {
+  color: yellow;
+}
+
+.moderes {
+  color: orange;
+}
+
+.importants {
+  color: red;
+}
+
+.stop_animation_button {
+  position: absolute;
+  left: -16px;
+  bottom: 16px;
+  display: flex;
+  justify-content: end;
+  transition: opacity 0.5s;
+  button {
+    all: unset;
+    background-color: var(--color1);
+    color: var(--color3);
+    cursor: pointer;
+    padding: 2px;
+  }
+  button:active {
+    scale: 0.98;
+  }
+}
+
+.stop_animation_button_hidden {
+  opacity: 0;
+}
+
+.confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  transition: opacity 0.5s;
+  cursor: pointer;
+  button {
+    all: unset;
+    border: 2px solid var(--color1);
+    padding: 8px 16px;
+    transition: all 0.3s;
+    border-radius: 8px;
+    @media (min-width: 1200px) {
+      font-size: 30px;
+      padding: 16px 32px;
+    }
+  }
+  button:hover {
+    color: var(--color3);
+    background-color: var(--color1);
+  }
+  button:active {
+    scale: 0.98;
+    cursor: pointer;
+  }
+}
+
+.confirmation_hidden {
+  opacity: 0;
+}
