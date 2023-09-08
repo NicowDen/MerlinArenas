@@ -63,7 +63,7 @@ const modificatorsReducer = (state = INITIAL_STATE, action) => {
       return { ...state, fightStart: false };
     }
     case "GET_RANDOM_BCK": {
-      return { ...state, bckRandom: getRandom(0, 6) };
+      return { ...state, bckRandom: getRandom(0, 5) };
     }
     case "RESET_MODIFICATORS_REDUCER": {
       return INITIAL_STATE;

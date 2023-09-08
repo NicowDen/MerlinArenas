@@ -14,8 +14,7 @@ import arena2 from "../../images/arena2.jpeg";
 import arena3 from "../../images/arena3.jpeg";
 import arena4 from "../../images/arena4.jpeg";
 import arena5 from "../../images/arena4.jpeg";
-import arena6 from "../../images/arena6.avif";
-import arena7 from "../../images/arena7.jpeg";
+import arena6 from "../../images/arena6.jpeg";
 //utils//
 import { getRandom } from "../../utils/getRandom";
 //MDJ dialogs//
@@ -76,7 +75,7 @@ const FightScene = () => {
     };
   });
 
-  const arenaImages = [arena1, arena2, arena3, arena4, arena5, arena6, arena7];
+  const arenaImages = [arena1, arena2, arena3, arena4, arena5, arena6];
   //mdj dialogs state rdm//
   const [random, setRandom] = useState(null);
 
